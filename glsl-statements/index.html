@@ -1,0 +1,405 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage" >
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<title>GLSL ES Statements</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/5016718124ac93bdfdfaad92/t/50169254e4b00a22f5cbda88/favicon.ico"/>
+<link rel="canonical" href="https://tommyettinger.github.io/glsl-es-reference/glsl-statements/"/>
+<meta property="og:site_name" content="➤"/>
+<meta property="og:title" content="GLSL ES Statements"/>
+<meta property="og:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-statements/"/>
+<meta property="og:type" content="website"/>
+<meta itemprop="name" content="GLSL ES Statements"/>
+<meta itemprop="url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-statements/"/>
+<meta name="twitter:title" content="GLSL ES Statements"/>
+<meta name="twitter:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-statements/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="description" content="" />
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=4"/><![endif]-->
+<!--[if !IE]> --><link rel="stylesheet" type="text/css" href="../site.css"/><!-- <![endif]-->	
+</head>
+
+<body class=" page-page show-on-homepage-blocks header-position-top center-align-home-block custom-home-block-font  shadow-under-filters color-detect-backgrounds thumbnail-transition-center      arrows-shape-round-corners social-icon-style-normal social-icon-placement-homepage-intro-area  product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square  show-product-price show-product-item-nav product-social-sharing   event-thumbnails event-thumbnail-size-32-standard event-date-label event-date-label-time event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link      opentable-style-light newsletter-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-default button-corner-style-square native-currency-code-usd collection-509a88c4e4b0d2694883d09d collection-type-page collection-layout-default mobile-style-available pre-yui" id="collection-509a88c4e4b0d2694883d09d">
+	
+	<header id="header">
+		<div id="header-wrapper">
+			
+				<h1 class="logo" data-content-field="site-title">
+					<a href="/">
+						
+							➤
+						
+						<span class="beep beeping"></span>
+					</a>
+				</h1>
+				
+			
+
+			<nav id="primary-navigation" data-content-field="navigation-topNav">
+				<ul>
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/">App</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/features/">Features</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/glsl/">GLSL</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="blog-collection">
+
+        
+
+          
+            <a href="/blog/">Blog</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/contact/">Contact</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+</ul>
+
+<select name="navselect" onChange="top.location.href = this.options[this.selectedIndex].value; return false;" style="display:none;">
+  <option class="nav-select-label" value="">Navigation</option>
+  
+
+    
+
+      
+        <option class="page-collection" value="/" >
+          App
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/features/" >
+          Features
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/glsl/" >
+          GLSL
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="blog-collection" value="/blog/" >
+          Blog
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/contact/" >
+          Contact
+        </option>
+      
+
+      
+
+    
+
+  
+  
+</select>
+			</nav>
+
+		</div>
+	</header>
+
+	<section id="top-blocks-wrapper">
+		<div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" id="topBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+		
+			
+			    <div class="sqs-social">
+			      <a href="https://twitter.com/ShaderificApp" target="_blank" title="Shaderific for iOS" class="social-twitter"></a>
+			    </div>
+			
+		
+	</section>
+
+	<section id="item-data-wrapper">
+		<h1 id="item-title" class="item-title"></h1>
+		<div id="item-data"></div>	
+
+		<!--
+		<div id="item-share-wrapper" class="share-wrapper">
+			<div class="share-label">SHARE</div>
+			<div class="share show">
+			<div class="vertical"></div><div class="horizontal"></div>
+			<div class="squarespace-social-buttons button-style"></div>
+			<div class="like">
+				<span class="sqs-simple-like" data-item-id="4fa90e49e4b0e2f84de2e2dd"></span>
+			</div>
+		</div>
+		-->
+		
+		<div id="gallery-dots"></div>
+		</div>
+		<div id="arrows">
+			<div class="arrow">
+				<div class="icon-chevron-left"></div>
+			</div>
+			<div class="arrow right">
+				<div class="icon-chevron-right"></div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="site">
+		
+		<div id="content" class="clear">
+			<h1 id="page-title">GLSL Statements</h1>
+			<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1352456923429" id="page-509a88c4e4b0d2694883d09d"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block markdown-block sqs-block-markdown" data-block-type="44" id="block-34941fc82fce4eaea052"><div class="sqs-block-content"><h1 id="openglesshadinglanguagestatements">OPENGL ES SHADING LANGUAGE STATEMENTS</h1>
+
+<p>This is a reference for the statements of the OpenGL ES Shading Language that is described in the OpenGL ES Shading Language specification. For more information please visit: <a href="http://www.opengl.org/registry">www.opengl.org/registry</a>.</p>
+
+<hr />
+
+<h1 id="loops">LOOPS</h1>
+
+<hr />
+
+<h1 id="forloop">For loop</h1>
+
+<pre><code>for(;;) {}
+</code></pre>
+
+<p>The keyword <strong>for</strong> is used to describe a loop that is controlled by a counter. The parentheses enclose three expressions that initialize, check and update the variable used as counter. The body defined by curly braces encloses the statements that are executed at each pass of the loop.</p>
+
+<pre><code>for(int i = 0; i &lt;= 99; i++) { aFunction(); }
+</code></pre>
+
+<p>The execution of a single pass or the whole loop can be aborted by using a continue or a break statement respectively. </p>
+
+<hr />
+
+<h1 id="whileloop">While loop</h1>
+
+<pre><code>while() {}
+</code></pre>
+
+<p>The keyword <strong>while</strong> is used to describe a loop that is controlled by a condition. The parentheses enclose the expression that defines the condition. The body defined by curly braces encloses the statements that are executed at each pass of the loop.</p>
+
+<pre><code>while(i &lt;= 99) { aFunction(); }
+</code></pre>
+
+<p>The execution of a single pass or the whole loop can be aborted by using a continue or a break statement respectively. </p>
+
+<hr />
+
+<h1 id="dowhileloop">Do-while loop</h1>
+
+<pre><code>do {} while();
+</code></pre>
+
+<p>The keyword <strong>do</strong> is used in combination with <strong>while</strong> to describe a loop that is controlled by a condition. The body defined by curly braces encloses the statements that are executed at each pass of the loop. The parentheses enclose the expression that defines the condition. </p>
+
+<pre><code>do { aFunction(); } while(i &lt;= 99);
+</code></pre>
+
+<p>The execution of a single pass or the whole loop can be aborted by using a continue or a break statement respectively.</p>
+
+<p>In contrast to a simple while loop the body is always executed at least one time even if the expression evaluates to false from the beginning.</p>
+
+<hr />
+
+<h1 id="abortasinglepassofaloop">Abort a single pass of a loop</h1>
+
+<pre><code>continue;
+</code></pre>
+
+<p>The keyword <strong>continue</strong> is used inside the body of a loop to abort a single pass of the loop. All statements in the body after the continue statement are ignored and the next iteration of the loop is executed immediately. </p>
+
+<hr />
+
+<h1 id="abortaloop">Abort a loop</h1>
+
+<pre><code>break;
+</code></pre>
+
+<p>The keyword <strong>break</strong> is used inside the body of a loop to abort the whole loop. All statements in the body after the break  statement are ignored and the loop is exited without executing any further iteration. </p>
+
+<hr />
+
+<h1 id="conditionalexecution">CONDITIONAL EXECUTION</h1>
+
+<hr />
+
+<h1 id="ifstatement">If statement</h1>
+
+<pre><code>if() {}
+</code></pre>
+
+<p>The keyword <strong>if</strong> is used to describe the conditional execution of a statement. The parentheses enclose the expression that defines the condition. The curly braces enclose the statements that are executed if the condition evaluates as true.</p>
+
+<pre><code>if(i != 0) { aFunction(); }
+</code></pre>
+
+<p>In contrast to a loop the statements in curly braces are executed only one time or not at all.</p>
+
+<hr />
+
+<h1 id="elsestatement">Else statement</h1>
+
+<pre><code>if() {} else {}
+</code></pre>
+
+<p>The keyword <strong>else</strong> is used in conjunction with the keyword if to describe the alternative execution of a statement. The parentheses enclose the expression that defines the condition. The curly braces after the if statement enclose the statements that are executed if the condition evaluates as true. The curly braces after the else statement enclose the statements that are executed if the condition evaluates as false.</p>
+
+<pre><code>if(i != 0) { aFunction(); } else { bFunction(); }
+</code></pre>
+
+<p>Depending on the condition either the statements in the first curly braces or the statements in the second curly braces are executed.</p>
+
+<hr />
+
+<h1 id="exitexecution">EXIT EXECUTION</h1>
+
+<hr />
+
+<h1 id="returnstatement">Return statement</h1>
+
+<pre><code>return;
+</code></pre>
+
+<p>The keyword <strong>return</strong> is used to define a proper exit for a function. If the function has the return type void no value is passed back to the caller of the function.</p>
+
+<pre><code>return aValue;
+</code></pre>
+
+<p>If the function has a non-void return type a parameter of the same type has to be included in the statement. The value is passed back to the caller of the function. </p>
+
+<hr />
+
+<h1 id="discardstatement">Discard statement</h1>
+
+<pre><code>discard;
+</code></pre>
+
+<p>The keyword <strong>discard</strong> is used to define an exceptionally exit for a fragment shader. It is used exit the fragment shader immediately and to signal the OpenGL ES 2.0 pipeline that the respective fragment should not be drawn.</p>
+
+<hr />
+
+<h1 id="startexecution">START EXECUTION</h1>
+
+<hr />
+
+<h1 id="mainfunction">Main function</h1>
+
+<pre><code>void main(void) {}
+</code></pre>
+
+<p>The keyword <strong>main</strong> is used to define the main function of a shader. This function is the entry point for the execution of every vertex and fragment shader. The main function takes no parameters and does not return a value.</p></div></div></div></div></div>
+		</div>
+
+	</section>
+
+	<canvas id="image-canvas" width="10" height="10"></canvas>
+	
+</body>
+
+</html>   

@@ -1,0 +1,611 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage" >
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<title>GLSL ES Functions</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/5016718124ac93bdfdfaad92/t/50169254e4b00a22f5cbda88/favicon.ico"/>
+<link rel="canonical" href="https://tommyettinger.github.io/glsl-es-reference/glsl-functions/"/>
+<meta property="og:site_name" content="➤"/>
+<meta property="og:title" content="GLSL ES Functions"/>
+<meta property="og:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-functions/"/>
+<meta property="og:type" content="website"/>
+<meta itemprop="name" content="GLSL ES Functions"/>
+<meta itemprop="url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-functions/"/>
+<meta name="twitter:title" content="GLSL ES Functions"/>
+<meta name="twitter:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-functions/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="description" content="" />
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=4"/><![endif]-->
+<!--[if !IE]> --><link rel="stylesheet" type="text/css" href="../site.css"/><!-- <![endif]-->	
+</head>
+
+<body class=" page-page show-on-homepage-blocks header-position-top center-align-home-block custom-home-block-font  shadow-under-filters color-detect-backgrounds thumbnail-transition-center      arrows-shape-round-corners social-icon-style-normal social-icon-placement-homepage-intro-area  product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square  show-product-price show-product-item-nav product-social-sharing   event-thumbnails event-thumbnail-size-32-standard event-date-label event-date-label-time event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link      opentable-style-light newsletter-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-default button-corner-style-square native-currency-code-usd collection-type-page collection-layout-default collection-508a89b4e4b0f50834e29f22 mobile-style-available pre-yui" id="collection-508a89b4e4b0f50834e29f22">
+	
+	<header id="header">
+		<div id="header-wrapper">
+			
+				<h1 class="logo" data-content-field="site-title">
+					<a href="/">
+						
+							➤
+						
+						<span class="beep beeping"></span>
+					</a>
+				</h1>
+				
+			
+
+			<nav id="primary-navigation" data-content-field="navigation-topNav">
+				<ul>
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/">App</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/features">Features</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/glsl">GLSL</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="blog-collection">
+
+        
+
+          
+            <a href="/blog">Blog</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/contact">Contact</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+</ul>
+
+<select name="navselect" onChange="top.location.href = this.options[this.selectedIndex].value; return false;" style="display:none;">
+  <option class="nav-select-label" value="">Navigation</option>
+  
+
+    
+
+      
+        <option class="page-collection" value="/" >
+          App
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/features" >
+          Features
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/glsl" >
+          GLSL
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="blog-collection" value="/blog" >
+          Blog
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/contact" >
+          Contact
+        </option>
+      
+
+      
+
+    
+
+  
+  
+</select>
+			</nav>
+
+		</div>
+	</header>
+
+	<section id="top-blocks-wrapper">
+		<div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" id="topBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+		
+			
+			    <div class="sqs-social">
+			      <a href="https://twitter.com/ShaderificApp" target="_blank" title="Shaderific for iOS" class="social-twitter"></a>
+			    </div>
+			
+		
+	</section>
+
+	<section id="item-data-wrapper">
+		<h1 id="item-title" class="item-title"></h1>
+		<div id="item-data"></div>	
+
+		<!--
+		<div id="item-share-wrapper" class="share-wrapper">
+			<div class="share-label">SHARE</div>
+			<div class="share show">
+			<div class="vertical"></div><div class="horizontal"></div>
+			<div class="squarespace-social-buttons button-style"></div>
+			<div class="like">
+				<span class="sqs-simple-like" data-item-id="4fa90e49e4b0e2f84de2e2dd"></span>
+			</div>
+		</div>
+		-->
+		
+		<div id="gallery-dots"></div>
+		</div>
+		<div id="arrows">
+			<div class="arrow">
+				<div class="icon-chevron-left"></div>
+			</div>
+			<div class="arrow right">
+				<div class="icon-chevron-right"></div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="site">
+		
+		<div id="content" class="clear">
+			<h1 id="page-title">GLSL Functions</h1>
+			<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1457444125855" id="page-508a89b4e4b0f50834e29f22"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block markdown-block sqs-block-markdown" data-block-type="44" id="block-076774e5b1f443281462"><div class="sqs-block-content"><h1 id="opengl-es-shading-language-built-in-functions">OPENGL ES SHADING LANGUAGE BUILT-IN FUNCTIONS</h1>
+<p>This is a reference for the built-in functions of the OpenGL ES Shading Language that is described in the OpenGL ES Shading Language specification. For more information please visit: <a href="http://www.opengl.org/registry">www.opengl.org/registry</a>.</p>
+<hr>
+<h1 id="angle-trigonometry-functions">ANGLE &amp; TRIGONOMETRY FUNCTIONS</h1>
+<hr>
+<h1 id="radians">Radians</h1>
+<pre><code>float radians(float degrees)  
+vec2 radians(vec2 degrees)  
+vec3 radians(vec3 degrees)  
+vec4 radians(vec4 degrees)</code></pre><p>The <strong>radians</strong> function converts degrees to radians. The input parameter can be a floating scalar or a float vector. In case of a float vector all components are converted from degrees to radians separately.</p>
+<hr>
+<h1 id="degrees">Degrees</h1>
+<pre><code>float degrees(float radians)  
+vec2 degrees(vec2 radians)  
+vec3 degrees(vec3 radians)  
+vec4 degrees(vec4 radians)</code></pre><p>The <strong>degrees</strong> function converts radians to degrees. The input parameter can be a floating scalar or a float vector. In case of a float vector every component is converted from radians to degrees separately.</p>
+<hr>
+<h1 id="sine">Sine</h1>
+<pre><code>float sin(float angle)  
+vec2 sin(vec2 angle)  
+vec3 sin(vec3 angle)  
+vec4 sin(vec4 angle)</code></pre><p>The <strong>sin</strong> function returns the sine of an angle in radians. The input parameter can be a floating scalar or a float vector. In case of a float vector the sine is calculated separately for every component.</p>
+<hr>
+<h1 id="cosine">Cosine</h1>
+<pre><code>float cos(float angle)  
+vec2 cos(vec2 angle)  
+vec3 cos(vec3 angle)  
+vec4 cos(vec4 angle)</code></pre><p>The <strong>cos</strong> function returns the cosine of an angle in radians. The input parameter can be a floating scalar or a float vector. In case of a float vector the cosine is calculated separately for every component.</p>
+<hr>
+<h1 id="tangent">Tangent</h1>
+<pre><code>float tan(float angle)  
+vec2 tan(vec2 angle)  
+vec3 tan(vec3 angle)  
+vec4 tan(vec4 angle)</code></pre><p>The <strong>tan</strong> function returns the tangent of an angle in radians. The input parameter can be a floating scalar or a float vector. In case of a float vector the tangent is calculated separately for every component.</p>
+<hr>
+<h1 id="arcsine">Arcsine</h1>
+<pre><code>float asin(float x)  
+vec2 asin(vec2 x)  
+vec3 asin(vec3 x)  
+vec4 asin(vec4 x)</code></pre><p>The <strong>asin</strong> function returns the arcsine of an angle in radians. It is the inverse function of sine. The input parameter can be a floating scalar or a float vector. In case of a float vector the arcsine is calculated separately for every component.</p>
+<hr>
+<h1 id="arccosine">Arccosine</h1>
+<pre><code>float acos(float x)  
+vec2 acos(vec2 x)  
+vec3 acos(vec3 x)  
+vec4 acos(vec4 x)</code></pre><p>The <strong>acos</strong> function returns the arccosine of an angle in radians. It is the inverse function of cosine. The input parameter can be a floating scalar or a float vector. In case of a float vector the arccosine is calculated separately for every component.</p>
+<hr>
+<h1 id="arctangent">Arctangent</h1>
+<pre><code>float atan(float y_over_x)  
+vec2 atan(vec2 y_over_x)  
+vec3 atan(vec3 y_over_x)  
+vec4 atan(vec4 y_over_x)</code></pre><p>The <strong>atan</strong> function returns the arctangent of an angle in radians. It is the inverse function of tangent. The input parameter can be a floating scalar or a float vector. In case of a float vector the arctangent is calculated separately for every component.</p>
+<pre><code>float atan(float y, float x)  
+vec2 atan(vec2 y, vec2 x)  
+vec3 atan(vec3 y, vec3 x)  
+vec4 atan(vec4 y, vec4 x)</code></pre><p>There is also a two-argument variation of the <strong>atan</strong> function (in other programming languages often called atan2). For a point with Cartesian coordinates (x, y) the function returns the angle θ of the same point with polar coordinates (r, θ).</p>
+<hr>
+<h1 id="exponential-functions">EXPONENTIAL FUNCTIONS</h1>
+<hr>
+<h1 id="exponentiation">Exponentiation</h1>
+<pre><code>float pow(float x, float y)  
+vec2 pow(vec2 x, vec2 y)  
+vec3 pow(vec3 x, vec3 y)  
+vec4 pow(vec4 x, vec4 y)</code></pre><p>The <strong>power</strong> function returns x raised to the power of y. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<hr>
+<h1 id="exponential-function">Exponential function</h1>
+<pre><code>float exp(float x)  
+vec2 exp(vec2 x)  
+vec3 exp(vec3 x)  
+vec4 exp(vec4 x)</code></pre><p>The <strong>exp</strong> function returns the constant e raised to the power of x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="natural-logarithm">Natural logarithm</h1>
+<pre><code>float log(float x)  
+vec2 log(vec2 x)  
+vec3 log(vec3 x)  
+vec4 log(vec4 x)</code></pre><p>The <strong>log</strong> function returns the power to which the constant e has to be raised to produce x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="exponential-function-base-2-">Exponential function (base 2)</h1>
+<pre><code>float exp2(float x)  
+vec2 exp2(vec2 x)  
+vec3 exp2(vec3 x)  
+vec4 exp2(vec4 x)</code></pre><p>The <strong>exp2</strong> function returns 2 raised to the power of x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="logarithm-base-2-">Logarithm (base 2)</h1>
+<pre><code>float log2(float x)  
+vec2 log2(vec2 x)  
+vec3 log2(vec3 x)  
+vec4 log2(vec4 x)</code></pre><p>The <strong>log2</strong> function returns the power to which 2 has to be raised to produce x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="square-root">Square root</h1>
+<pre><code>float sqrt(float x)  
+vec2 sqrt(vec2 x)  
+vec3 sqrt(vec3 x)  
+vec4 sqrt(vec4 x)</code></pre><p>The <strong>sqrt</strong> function returns the square root of x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="inverse-square-root">Inverse square root</h1>
+<pre><code>float inversesqrt(float x)  
+vec2 inversesqrt(vec2 x)  
+vec3 inversesqrt(vec3 x)  
+vec4 inversesqrt(vec4 x)</code></pre><p>The <strong>inversesqrt</strong> function returns the inverse square root of x, i.e. the reciprocal of the square root. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="common-functions">COMMON FUNCTIONS</h1>
+<hr>
+<h1 id="absolute-value">Absolute value</h1>
+<pre><code>float abs(float x)  
+vec2 abs(vec2 x)  
+vec3 abs(vec3 x)  
+vec4 abs(vec4 x)</code></pre><p>The <strong>abs</strong> function returns the absolute value of x, i.e. x when x is positive or zero and -x for negative x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="sign">Sign</h1>
+<pre><code>float sign(float x)  
+vec2 sign(vec2 x)  
+vec3 sign(vec3 x)  
+vec4 sign(vec4 x)</code></pre><p>The <strong>sign</strong> function returns 1.0 when x is positive, 0.0 when x is zero and -1.0 when x is negative. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="floor">Floor</h1>
+<pre><code>float floor(float x)  
+vec2 floor(vec2 x)  
+vec3 floor(vec3 x)  
+vec4 floor(vec4 x)</code></pre><p>The <strong>floor</strong> function returns the largest integer number that is smaller or equal to x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<p>Side note: The return value is of type floating scalar or float vector although the result of the operation is an integer.</p>
+<hr>
+<h1 id="ceiling">Ceiling</h1>
+<pre><code>float ceil(float x)  
+vec2 ceil(vec2 x)  
+vec3 ceil(vec3 x)  
+vec4 ceil(vec4 x)</code></pre><p>The <strong>ceiling</strong> function returns the smallest number that is larger or equal to x. The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<p>Side note: The return value is of type floating scalar or float vector although the result of the operation is an integer.</p>
+<hr>
+<h1 id="fractional-part">Fractional part</h1>
+<pre><code>float fract(float x)  
+vec2 fract(vec2 x)  
+vec3 fract(vec3 x)  
+vec4 fract(vec4 x)</code></pre><p>The <strong>fract</strong> function returns the fractional part of x, i.e. x minus floor(x). The input parameter can be a floating scalar or a float vector. In case of a float vector the operation is done component-wise.</p>
+<hr>
+<h1 id="modulo">Modulo</h1>
+<pre><code>float mod(float x, float y)  
+vec2 mod(vec2 x, vec2 y)  
+vec3 mod(vec3 x, vec3 y)  
+vec4 mod(vec4 x, vec4 y)</code></pre><p>The <strong>mod</strong> function returns x minus the product of y and floor(x/y). The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<p>Side note: If x and y are integers the return value is the remainder of the division of x by y as expected.</p>
+<pre><code>float mod(float x, float y)  
+vec2 mod(vec2 x, float y)  
+vec3 mod(vec3 x, float y)  
+vec4 mod(vec4 x, float y)</code></pre><p>There is also a variation of the <strong>mod</strong> function where the second parameter is always a floating scalar.</p>
+<hr>
+<h1 id="minimum">Minimum</h1>
+<pre><code>float min(float x, float y)  
+vec2 min(vec2 x, vec2 y)  
+vec3 min(vec3 x, vec3 y)  
+vec4 min(vec4 x, vec4 y)</code></pre><p>The <strong>min</strong> function returns the smaller of the two arguments. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float min(float x, float y)  
+vec2 min(vec2 x, float y)  
+vec3 min(vec3 x, float y)  
+vec4 min(vec4 x, float y)</code></pre><p>There is also a variation of the <strong>min</strong> function where the second parameter is always a floating scalar.</p>
+<hr>
+<h1 id="maximum">Maximum</h1>
+<pre><code>float max(float x, float y)  
+vec2 max(vec2 x, vec2 y)  
+vec3 max(vec3 x, vec3 y)  
+vec4 max(vec4 x, vec4 y)</code></pre><p>The <strong>max</strong> function returns the larger of the two arguments. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float max(float x, float y)  
+vec2 max(vec2 x, float y)  
+vec3 max(vec3 x, float y)  
+vec4 max(vec4 x, float y)</code></pre><p>There is also a variation of the <strong>max</strong> function where the second parameter is always a floating scalar.</p>
+<hr>
+<h1 id="clamp">Clamp</h1>
+<pre><code>float clamp(float x, float minVal, float maxVal)  
+vec2 clamp(vec2 x, vec2 minVal, vec2 maxVal)  
+vec3 clamp(vec3 x, vec3 minVal, vec3 maxVal)  
+vec4 clamp(vec4 x, vec4 minVal, vec4 maxVal)</code></pre><p>The <strong>clamp</strong> function returns x if it is larger than minVal and smaller than maxVal. In case x is smaller than minVal, minVal is returned. If x is larger than maxVal, maxVal is returned. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float clamp(float x, float minVal, float maxVal)  
+vec2 clamp(vec2 x, float minVal, float maxVal)  
+vec3 clamp(vec3 x, float minVal, float maxVal)  
+vec4 clamp(vec4 x, flfloat minVal, float maxVal)</code></pre><p>There is also a variation of the <strong>clamp</strong> function where the second and third parameters are always a floating scalars.</p>
+<hr>
+<h1 id="mix">Mix</h1>
+<pre><code>float mix(float x, float y, float a)  
+vec2 mix(vec2 x, vec2 y, vec2 a)  
+vec3 mix(vec3 x, vec3 y, vec3 a)  
+vec4 mix(vec4 x, vec4 y, vec4 a)</code></pre><p>The <strong>mix</strong> function returns the linear blend of x and y, i.e. the product of x and (1 - a) plus the product of y and a. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float mix(float x, float y, float a)  
+vec2 mix(vec2 x, vec2 y, float a)  
+vec3 mix(vec3 x, vec3 y, float a)  
+vec4 mix(vec4 x, vec4 y, float a)</code></pre><p>There is also a variation of the <strong>mix</strong> function where the third parameter is always a floating scalar.</p>
+<hr>
+<h1 id="step">Step</h1>
+<pre><code>float step(float edge, float x)  
+vec2 step(vec2 edge, vec2 x)  
+vec3 step(vec3 edge, vec3 x)  
+vec4 step(vec4 edge, vec4 x)</code></pre><p>The <strong>step</strong> function returns 0.0 if x is smaller then edge and otherwise 1.0. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float step(float edge, float x)  
+vec2 step(float edge, vec2 x)  
+vec3 step(float edge, vec3 x)  
+vec4 step(float edge, vec4 x)</code></pre><p>There is also a variation of the <strong>step</strong> function where the edge parameter is always a floating scalar.</p>
+<hr>
+<h1 id="smoothstep">Smoothstep</h1>
+<pre><code>float smoothstep(float edge0, float edge1, float x)  
+vec2 smoothstep(vec2 edge0, vec2 edge1, vec2 x)  
+vec3 smoothstep(vec3 edge0, vec3 edge1, vec3 x)  
+vec4 smoothstep(vec4 edge0, vec4 edge1, vec4 x)</code></pre><p>The <strong>smoothstep</strong> function returns 0.0 if x is smaller then edge0 and 1.0 if x is larger than edge1. Otherwise the return value is interpolated between 0.0 and 1.0 using Hermite polynomials. The input parameters can be floating scalars or float vectors. In case of float vectors the operation is done component-wise.</p>
+<pre><code>float smoothstep(float edge0, float edge1, float x)  
+vec2 smoothstep(float edge0, float edge1, vec2 x)  
+vec3 smoothstep(float edge0, float edge1, vec3 x)  
+vec4 smoothstep(float edge0, float edge1, vec4 x)</code></pre><p>There is also a variation of the <strong> smoothstep</strong> function where the edge0 and edge1 parameters are always floating scalars.</p>
+<hr>
+<h1 id="geometric-functions">GEOMETRIC FUNCTIONS</h1>
+<hr>
+<h1 id="length">Length</h1>
+<pre><code>float length(float x)  
+float length(vec2 x)  
+float length(vec3 x)  
+float length(vec4 x)</code></pre><p>The <strong>length</strong> function returns the length of a vector defined by the Euclidean norm, i.e. the square root of the sum of the squared components. The input parameter can be a floating scalar or a float vector. In case of a floating scalar the length function is trivial and returns the absolute value.</p>
+<hr>
+<h1 id="distance">Distance</h1>
+<pre><code>float distance(float p0, float p1)  
+float distance(vec2 p0, vec2 p1)  
+float distance(vec3 p0, vec3 p1)  
+float distance(vec4 p0, vec4 p1)</code></pre><p>The <strong>distance</strong> function returns the distance between two points. The distance of two points is the length of the vector d = p0 - p1, that starts at p1 and points to p0. The input parameters can be floating scalars or float vectors. In case of floating scalars the distance function is trivial and returns the absolute value of d.</p>
+<hr>
+<h1 id="dot-product">Dot product</h1>
+<pre><code>float dot(float x, float y)  
+float dot(vec2 x, vec2 y)  
+float dot(vec3 x, vec3 y)  
+float dot(vec4 x, vec4 y)</code></pre><p>The <strong>dot</strong> function returns the dot product of the two input parameters, i.e. the sum of the component-wise products. If x and y are the same the square root of the dot product is equivalent to the length of the vector. The input parameters can be floating scalars or float vectors. In case of floating scalars the dot function is trivial and returns the product of x and y.</p>
+<hr>
+<h1 id="cross-product">Cross product</h1>
+<pre><code>vec3 cross(vec3 x, vec3 y)</code></pre><p>The <strong>cross</strong> function returns the cross product of the two input parameters, i.e. a vector that is perpendicular to the plane containing x and y and has a magnitude that is equal to the area of the parallelogram that x and y span. The input parameters can only be 3-component floating vectors. The cross product is equivalent to the product of the length of the vectors times the sinus of the(smaller) angle between x and y.</p>
+<hr>
+<h1 id="normalize">Normalize</h1>
+<pre><code>float normalize(float x)  
+vec2 normalize(vec2 x)  
+vec3 normalize(vec3 x)  
+vec4 normalize(vec4 x)</code></pre><p>The <strong>normalize</strong> function returns a vector with length 1.0 that is parallel to x, i.e. x divided by its length. The input parameter can be a floating scalar or a float vector. In case of a floating scalar the normalize function is trivial and returns 1.0.</p>
+<hr>
+<h1 id="faceforward">Faceforward</h1>
+<pre><code>float faceforward(float N, float I, float Nref)  
+vec2 faceforward(vec2 N, vec2 I, vec2 Nref)  
+vec3 faceforward(vec3 N, vec3 I, vec3 Nref)  
+vec4 faceforward(vec4 N, vec4 I, vec4 Nref)</code></pre><p>The <strong>faceforward</strong> function returns a vector that points in the same direction as a reference vector. The function has three input parameters of the type floating scalar or float vector: N, the vector to orient, I, the incident vector, and Nref, the reference vector. If the dot product of I and Nref is smaller than zero the return value is N. Otherwise -N is returned.</p>
+<hr>
+<h1 id="reflect">Reflect</h1>
+<pre><code>float reflect(float I, float N)  
+vec2 reflect(vec2 I, vec2 N)  
+vec3 reflect(vec3 I, vec3 N)  
+vec4 reflect(vec4 I, vec4 N)</code></pre><p>The <strong>reflect</strong> function returns a vector that points in the direction of reflection. The function has two input parameters of the type floating scalar or float vector: I, the incident vector, and N, the normal vector of the reflecting surface.</p>
+<p>Side note: To obtain the desired result the vector N has to be normalized. The reflection vector always has the same length as the incident vector. From this it follows that the reflection vector is normalized if N and I are both normalized. </p>
+<hr>
+<h1 id="refract">Refract</h1>
+<pre><code>float refract(float I, float N, float eta)  
+vec2 refract(vec2 I, vec2 N, float eta)  
+vec3 refract(vec3 I, vec3 N, float eta)  
+vec4 refract(vec4 I, vec4 N, float eta)</code></pre><p>The <strong>refract</strong> function returns a vector that points in the direction of refraction. The function has two input parameters of the type floating scalar or float vector and one input parameter of the type floating scalar: I, the incident vector, N, the normal vector of the refracting surface, and eta, the ratio of indices of refraction.</p>
+<p>Side note: To obtain the desired result the vectors I and N have to be normalized.</p>
+<hr>
+<h1 id="matrix-functions">MATRIX FUNCTIONS</h1>
+<hr>
+<h1 id="component-wise-matrix-multiplication">Component-wise matrix multiplication</h1>
+<pre><code>mat2 matrixCompMult(mat2 x, mat2 y)  
+mat3 matrixCompMult(mat3 x, mat3 y)  
+mat4 matrixCompMult(mat4 x, mat4 y)</code></pre><p>The <strong>matrixCompMult</strong> function returns a matrix resulting from a component-wise multiplication. The function has two input parameters of the type floating point matrix and returns a matrix of the same type. The indices of the returned matrix are calculated as follows: z[i][j] = x[i][j] * y[i][j] </p>
+<p>Side note: This is NOT the matrix multiplication known from linear algebra. To obtain the "normal" matrix multiplication the <em> operator is used: z = x </em> y</p>
+<hr>
+<h1 id="vector-relational-functions">VECTOR RELATIONAL FUNCTIONS</h1>
+<hr>
+<h1 id="less-than-comparison">Less than comparison</h1>
+<pre><code>bvec2 lessThan(vec2 x, vec2 y)  
+bvec3 lessThan(vec3 x, vec3 y)    
+bvec4 lessThan(vec4 x, vec4 y)  
+
+bvec2 lessThan(ivec2 x, ivec2 y)  
+bvec3 lessThan(ivec3 x, ivec3 y)  
+bvec4 lessThan(ivec4 x, ivec4 y)</code></pre><p>The <strong>lessThan</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] &lt; y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="less-than-or-equal-comparison">Less than or equal comparison</h1>
+<pre><code>bvec2 lessThanEqual(vec2 x, vec2 y)  
+bvec3 lessThanEqual(vec3 x, vec3 y)  
+bvec4 lessThanEqual(vec4 x, vec4 y)  
+
+bvec2 lessThanEqual(ivec2 x, ivec2 y)  
+bvec3 lessThanEqual(ivec3 x, ivec3 y)  
+bvec4 lessThanEqual(ivec4 x, ivec4 y)</code></pre><p>The <strong>lessThanEqual</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] &lt;= data-preserve-html-node="true" y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="greater-than-comparison">Greater than comparison</h1>
+<pre><code>bvec2 greaterThan(vec2 x, vec2 y)  
+bvec3 greaterThan(vec3 x, vec3 y)  
+bvec4 greaterThan(vec4 x, vec4 y)  
+
+bvec2 greaterThan(ivec2 x, ivec2 y)  
+bvec3 greaterThan(ivec3 x, ivec3 y)  
+bvec4 greaterThan(ivec4 x, ivec4 y)</code></pre><p>The <strong>greaterThan</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] &gt; y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="greater-than-or-equal-comparison">Greater than or equal comparison</h1>
+<pre><code>bvec2 greaterThanEqual(vec2 x, vec2 y)  
+bvec3 greaterThanEqual(vec3 x, vec3 y)  
+bvec4 greaterThanEqual(vec4 x, vec4 y)  
+
+bvec2 greaterThanEqual(ivec2 x, ivec2 y)  
+bvec3 greaterThanEqual(ivec3 x, ivec3 y)  
+bvec4 greaterThanEqual(ivec4 x, ivec4 y)</code></pre><p>The <strong>greaterThanEqual</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] &gt;= y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="equal-comparison">Equal comparison</h1>
+<pre><code>bvec2 equal(vec2 x, vec2 y)  
+bvec3 equal(vec3 x, vec3 y)  
+bvec4 equal(vec4 x, vec4 y)  
+
+bvec2 equal(ivec2 x, ivec2 y)  
+bvec3 equal(ivec3 x, ivec3 y)  
+bvec4 equal(ivec4 x, ivec4 y)</code></pre><p>The <strong>equal</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] = y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="not-equal-comparison">Not equal comparison</h1>
+<pre><code>bvec2 notEqual(vec2 x, vec2 y)  
+bvec3 notEqual(vec3 x, vec3 y)  
+bvec4 notEqual(vec4 x, vec4 y)  
+
+bvec2 notEqual(ivec2 x, ivec2 y)  
+bvec3 notEqual(ivec3 x, ivec3 y)  
+bvec4 notEqual(ivec4 x, ivec4 y)</code></pre><p>The <strong>notEqual</strong> function returns a boolean vector as result of a component-wise comparison in the form of x[i] != y[i]. The function has two input parameters of the type floating point vector or signed integer vector.</p>
+<hr>
+<h1 id="any-evaluation">Any evaluation</h1>
+<pre><code>bool any(bvec2 x)  
+bool any(bvec3 x)  
+bool any(bvec4 x)</code></pre><p>The <strong>any</strong> function returns a boolean value as result of the evaluation whether any component of the input vector is TRUE. The function has one input parameters of the type boolean vector.</p>
+<hr>
+<h1 id="all-evaluation">All evaluation</h1>
+<pre><code>bool all(bvec2 x)  
+bool all(bvec3 x)  
+bool all(bvec4 x)</code></pre><p>The <strong>all</strong> function returns a boolean value as result of the evaluation whether all components of the input vector are TRUE. The function has one input parameters of the type boolean vector.</p>
+<hr>
+<h1 id="not-evaluation">Not evaluation</h1>
+<pre><code>bvec2 not(bvec2 x)  
+ bvec3 not(bvec3 x)  
+ bvec4 not(bvec4 x)</code></pre><p>The <strong>not</strong> function returns a boolean vector as result of a component-wise logical complement operation. The function has one input parameters of the type boolean vector.</p>
+<hr>
+<h1 id="texture-lookup-functions">TEXTURE LOOKUP FUNCTIONS</h1>
+<hr>
+<h1 id="2d-texture-lookup">2D texture lookup</h1>
+<pre><code>vec4 texture2D(sampler2D sampler, vec2 coord)  
+vec4 texture2D(sampler2D sampler, vec2 coord, float bias)</code></pre><p>The <strong>texture2D</strong> function returns a texel, i.e. the (color) value of the texture for the given coordinates. The function has one input parameter of the type sampler2D and one input parameter of the type vec2 : sampler, the uniform the texture is bound to, and coord, the 2-dimensional coordinates of the texel to look up.</p>
+<p>There is an optional third input parameter of the type float: bias. After calculating the appropriate level of detail for a texture with mipmaps the bias is added before the actual texture lookup operation is executed.   </p>
+<p>Side note: On iOS devices texture lookup functionality is only available in the fragment shader.</p>
+<hr>
+<h1 id="cubemap-texture-lookup">Cubemap texture lookup</h1>
+<pre><code>vec4 textureCube(samplerCube sampler, vec3 coord)  
+vec4 textureCube(samplerCube sampler, vec3 coord, float bias)</code></pre><p>The <strong>textureCube</strong> function returns a texel, i.e. the (color) value of the texture for the given coordinates. The function has one input parameter of the type samplerCube and one input parameter of the type vec3 : sampler, the uniform the texture is bound to, and coord, the 3-dimensional coordinates of the texel to look up.</p>
+<p>There is an optional third input parameter of the type float: bias. After calculating the appropriate level of detail for a texture with mipmaps the bias is added before the actual texture lookup operation is executed.   </p>
+<p>Side note: On iOS devices texture lookup functionality is only available in the fragment shader.</p>
+</div></div></div></div></div>
+		</div>
+
+	</section>
+	<canvas id="image-canvas" width="10" height="10"></canvas>
+	
+</body>
+
+</html>   

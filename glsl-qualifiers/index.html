@@ -1,0 +1,434 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage" >
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<title>GLSL ES Qualifiers</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/5016718124ac93bdfdfaad92/t/50169254e4b00a22f5cbda88/favicon.ico"/>
+<link rel="canonical" href="https://tommyettinger.github.io/glsl-es-reference/glsl-qualifiers/"/>
+<meta property="og:site_name" content="➤"/>
+<meta property="og:title" content="GLSL ES Qualifiers"/>
+<meta property="og:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-qualifiers/"/>
+<meta property="og:type" content="website"/>
+<meta itemprop="name" content="GLSL ES Qualifiers"/>
+<meta itemprop="url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-qualifiers/"/>
+<meta name="twitter:title" content="GLSL ES Qualifiers"/>
+<meta name="twitter:url" content="https://tommyettinger.github.io/glsl-es-reference/glsl-qualifiers/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="description" content="" />
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/5016718124ac93bdfdfaad92/131/4f86f86824acd56836aacb83/505c377ee4b0dfa3120787fb/5387-05142015/1494590749002/site.css?&filterFeatures=false&noMedia=true&part=4"/><![endif]-->
+<!--[if !IE]> --><link rel="stylesheet" type="text/css" href="../site.css"/><!-- <![endif]-->	
+</head>
+
+<body class=" page-page show-on-homepage-blocks header-position-top center-align-home-block custom-home-block-font  shadow-under-filters color-detect-backgrounds thumbnail-transition-center      arrows-shape-round-corners social-icon-style-normal social-icon-placement-homepage-intro-area  product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square  show-product-price show-product-item-nav product-social-sharing   event-thumbnails event-thumbnail-size-32-standard event-date-label event-date-label-time event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link      opentable-style-light newsletter-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-default button-corner-style-square native-currency-code-usd collection-type-page collection-layout-default collection-50991eabe4b0f629c2afa714 mobile-style-available pre-yui" id="collection-50991eabe4b0f629c2afa714">
+	
+	<header id="header">
+		<div id="header-wrapper">
+			
+				<h1 class="logo" data-content-field="site-title">
+					<a href="/">
+						
+							➤
+						
+						<span class="beep beeping"></span>
+					</a>
+				</h1>
+				
+			
+
+			<nav id="primary-navigation" data-content-field="navigation-topNav">
+				<ul>
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/">App</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/features">Features</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/glsl">GLSL</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="blog-collection">
+
+        
+
+          
+            <a href="/blog">Blog</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+
+      <li class="page-collection">
+
+        
+
+          
+            <a href="/contact">Contact</a>
+          
+
+          
+
+
+        
+
+      </li>
+
+  
+</ul>
+
+<select name="navselect" onChange="top.location.href = this.options[this.selectedIndex].value; return false;" style="display:none;">
+  <option class="nav-select-label" value="">Navigation</option>
+  
+
+    
+
+      
+        <option class="page-collection" value="/" >
+          App
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/features" >
+          Features
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/glsl" >
+          GLSL
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="blog-collection" value="/blog" >
+          Blog
+        </option>
+      
+
+      
+
+    
+
+  
+
+    
+
+      
+        <option class="page-collection" value="/contact" >
+          Contact
+        </option>
+      
+
+      
+
+    
+
+  
+  
+</select>
+			</nav>
+
+		</div>
+	</header>
+
+	<section id="top-blocks-wrapper">
+		<div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" id="topBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+		
+			
+			    <div class="sqs-social">
+			      <a href="https://twitter.com/ShaderificApp" target="_blank" title="Shaderific for iOS" class="social-twitter"></a>
+			    </div>
+			
+		
+	</section>
+
+	<section id="item-data-wrapper">
+		<h1 id="item-title" class="item-title"></h1>
+		<div id="item-data"></div>	
+
+		<!--
+		<div id="item-share-wrapper" class="share-wrapper">
+			<div class="share-label">SHARE</div>
+			<div class="share show">
+			<div class="vertical"></div><div class="horizontal"></div>
+			<div class="squarespace-social-buttons button-style"></div>
+			<div class="like">
+				<span class="sqs-simple-like" data-item-id="4fa90e49e4b0e2f84de2e2dd"></span>
+			</div>
+		</div>
+		-->
+		
+		<div id="gallery-dots"></div>
+		</div>
+		<div id="arrows">
+			<div class="arrow">
+				<div class="icon-chevron-left"></div>
+			</div>
+			<div class="arrow right">
+				<div class="icon-chevron-right"></div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="site">
+		
+		<div id="content" class="clear">
+			<h1 id="page-title">GLSL Qualifiers</h1>
+			<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1352456902876" id="page-50991eabe4b0f629c2afa714"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block markdown-block sqs-block-markdown" data-block-type="44" id="block-05cecfb7e8ed26ac4647"><div class="sqs-block-content"><h1 id="openglesshadinglanguagequalifiers">OPENGL ES SHADING LANGUAGE QUALIFIERS</h1>
+
+<p>This is a reference for the qualifiers of the OpenGL ES Shading Language that is described in the OpenGL ES Shading Language specification. For more information please visit: <a href="http://www.opengl.org/registry">www.opengl.org/registry</a>.</p>
+
+<hr />
+
+<h1 id="storagequalifiers">STORAGE QUALIFIERS</h1>
+
+<hr />
+
+<h1 id="constant">Constant</h1>
+
+<pre><code>const
+</code></pre>
+
+<p>The qualifier <strong>const</strong> is used for variables that are compile-time constants or for function parameters that are read-only.</p>
+
+<hr />
+
+<h1 id="attribute">Attribute</h1>
+
+<pre><code>attribute
+</code></pre>
+
+<p>The qualifier <strong>attribute</strong> is used to declare variables that are shared between a vertex shader and the OpenGL ES environment. </p>
+
+<p>Since the vertex shader is executed one time for each vertex attributes are used to specify per vertex data. They typically provide data such as the object space position, the normal direction and the texture coordinates of a vertex. Attributes are read-only variables, i.e. their value can not be changed in the vertex shader.</p>
+
+<p>Side note: Since an attribute is never initialized in the shader it has to be loaded with data by the application executing the shader.</p>
+
+<hr />
+
+<h1 id="uniform">Uniform</h1>
+
+<pre><code>uniform
+</code></pre>
+
+<p>The qualifier <strong>uniform</strong> is used to declare variables that are shared between a shader and the OpenGL ES environment.</p>
+
+<p>Uniforms can be used in the vertex shader and the fragment shader and they must have global scope. The same uniform variable can be used in the vertex and the fragment shader, but since both shaders share the same name space the declaration has to be identical. Uniforms are used to specify properties of the object that is rendered. Examples are the projection matrix, the  light position or the material color of the object. Uniforms are read-only variables, i.e. their value can not be changed in the shader.</p>
+
+<p>Side note: Since a uniform is never initialized in the shader it has to be loaded with data by the application executing the shader.</p>
+
+<hr />
+
+<h1 id="varying">Varying</h1>
+
+<pre><code>varying
+</code></pre>
+
+<p>The qualifier <strong>varying</strong> is used to declare variables that are shared between the vertex shader and the fragment shader.</p>
+
+<p>Varying are used for information that is calculated in the vertex shader and should be handed over to the fragment shader. Both shaders have to declare the varying and the declarations must be identical. The vertex shader initializes the varying for each vertex. After that the per vertex data of the varying is interpolated during rasterization before being handed over to the fragment shader.</p>
+
+<p>The varying qualifier can only be used with floating point scalar, floating point vectors and (floating point) matrices as well as arrays containing these types.</p>
+
+<hr />
+
+<h1 id="precisionqualifiers">PRECISION QUALIFIERS</h1>
+
+<hr />
+
+<h1 id="highprecision">High precision</h1>
+
+<pre><code>highp
+</code></pre>
+
+<p>The qualifier <strong>highp</strong> is used to specify the highest available precision for a variable. The variable has to be an integer or a floating point scalar or a vector or matrix based on these types. The precision qualifier precedes the type in the variable declaration.</p>
+
+<p>In the vertex shader the use of a precision qualifier is optional. If no qualifier is given all variables are of highest precision. In the fragment shader a precision qualifier has to be used when declaring a variable unless a default precision has been defined for the specific type.</p>
+
+<pre><code>uniform highp vec3 lightDirection;
+</code></pre>
+
+<p>The actual range corresponding to a precision qualifier is dependent on the specific OpenGL ES implementation. Using a lower precision might have a positive effect on performance (frame rates) and power efficiency but might also cause a loss in rendering quality. The appropriate trade-off can only be determined by testing different precision configurations.</p>
+
+<hr />
+
+<h1 id="mediumprecision">Medium precision</h1>
+
+<pre><code>mediump
+</code></pre>
+
+<p>The qualifier <strong>mediump</strong> is used to specify a precision between the highest and lowest available precision for a variable. The variable has to be an integer or a floating point scalar or a vector or matrix based on these types. The precision qualifier precedes the type in the variable declaration.</p>
+
+<p>In the vertex shader the use of a precision qualifier is optional. If no qualifier is given all variables are of highest precision. In the fragment shader a precision qualifier has to be used when declaring a variable unless a default precision has been defined for the specific type.</p>
+
+<pre><code>varying mediump vec2 textureCoordinate;
+</code></pre>
+
+<p>The actual range corresponding to a precision qualifier is dependent on the specific OpenGL ES implementation. Using a lower precision might have a positive effect on performance (frame rates) and power efficiency but might also cause a loss in rendering quality. The appropriate trade-off can only be determined by testing different precision configurations.</p>
+
+<hr />
+
+<h1 id="lowprecision">Low precision</h1>
+
+<pre><code>lowp
+</code></pre>
+
+<p>The qualifier <strong>lowp</strong> is used to specify the lowest available precision for a variable. The variable has to be an integer or a floating point scalar or a vector or matrix based on these types. The precision qualifier precedes the type in the variable declaration.</p>
+
+<p>In the vertex shader the use of a precision qualifier is optional. If no qualifier is given all variables are of highest precision. In the fragment shader a precision qualifier has to be used when declaring a variable unless a default precision has been defined for the specific type.</p>
+
+<pre><code>varying lowp vec4 colorVarying;
+</code></pre>
+
+<p>The actual range corresponding to a precision qualifier is dependent on the specific OpenGL ES implementation. Using a lower precision might have a positive effect on performance (frame rates) and power efficiency but might also cause a loss in rendering quality. The appropriate trade-off can only be determined by testing different precision configurations.</p>
+
+<hr />
+
+<h1 id="defaultprecision">Default precision</h1>
+
+<pre><code>precision
+</code></pre>
+
+<p>The keyword <strong>precision</strong> is used in conjunction with a precision qualifier and a data type to specify the default precision for that data type. The type has to be an integer or a floating point scalar or a vector or matrix based on these types.</p>
+
+<p>In the vertex shader all variables are of highest precision by default. The default can be changed defining another default precision. In the fragment shader a precision qualifier has to be used when declaring a variable unless a default precision has been defined for the specific type.</p>
+
+<pre><code>precision highp float;
+</code></pre>
+
+<p>The actual range corresponding to a precision qualifier is dependent on the specific OpenGL ES implementation. Using a lower precision might have a positive effect on performance (frame rates) and power efficiency but might also cause a loss in rendering quality. The appropriate trade-off can only be determined by testing different precision configurations.</p>
+
+<h1 id="parameterqualifiers">PARAMETER QUALIFIERS</h1>
+
+<hr />
+
+<h1 id="inputqualifier">Input qualifier</h1>
+
+<pre><code>in
+</code></pre>
+
+<p>The qualifier <strong>in</strong> is used to mark a parameter as read-only when a function is declared. The parameter will be passed by value to the function and the value can not be modified by the function.</p>
+
+<pre><code>int newFunction(in bvec4 aBvec4,   // read-only 
+                out vec3 aVec3,    // write-only
+                inout int aInt);   // read-write
+</code></pre>
+
+<p>The above function declaration shows the three possible parameter qualifiers. The usage of the read-only qualifier is not necessary since this is the default if no qualifier is specified.</p>
+
+<hr />
+
+<h1 id="outputqualifier">Output qualifier</h1>
+
+<pre><code>out
+</code></pre>
+
+<p>The qualifier <strong>out</strong> is used to mark a parameter as write-only when a function is declared. The parameter will be passed by reference to the function but it is not initialized, i.e. the value can not be read. The value can be modified by the function and the changes are preserved after the function exits.</p>
+
+<pre><code>int newFunction(in bvec4 aBvec4,   // read-only 
+                out vec3 aVec3,    // write-only
+                inout int aInt);   // read-write
+</code></pre>
+
+<p>The above function declaration shows the three possible parameter qualifiers. The usage of the read-only qualifier is not necessary since this is the default if no qualifier is specified.</p>
+
+<h1 id="inputoutputqualifier">Input-output qualifier</h1>
+
+<pre><code>inout
+</code></pre>
+
+<p>The qualifier <strong>inout</strong> is used to mark a parameter as read-write when a function is declared. The parameter will be passed by reference to the function and is initialized, i.e. the value can be read. The value can be modified by the function and the changes are preserved after the function exits.</p>
+
+<pre><code>int newFunction(in bvec4 aBvec4,   // read-only 
+                out vec3 aVec3,    // write-only
+                inout int aInt);   // read-write
+</code></pre>
+
+<p>The above function declaration shows the three possible parameter qualifiers. The usage of the read-only qualifier is not necessary since this is the default if no qualifier is specified.</p></div></div></div></div></div>
+		</div>
+
+	</section>
+	<canvas id="image-canvas" width="10" height="10"></canvas>
+	
+</body>
+
+</html>   
